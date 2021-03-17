@@ -1,0 +1,30 @@
+#jogoVelha{
+    width: 603px;
+    height: 600px;
+    border: solid 3px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.linha{
+    height: 200px;
+    border-bottom: solid 1px;
+}
+
+.coluna{
+    width: 200px;
+    height: 100%;
+    border-right: solid 1px;
+    float: left;
+}
+
+#resultado{
+    display: flex;
+    align-items: center;
+}
+
+#filecontents {
+    border: double;
+    overflow-y: scroll;
+    height: 400px;
+}
