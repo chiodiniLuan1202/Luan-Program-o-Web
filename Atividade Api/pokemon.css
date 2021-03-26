@@ -1,0 +1,66 @@
+  
+body{
+    background-image:url("C:/Users/Claus Barg/Desktop/Programção Web/PokemonApi/fundo.png") ;
+    
+}
+main{
+    width:900px;
+    height:1500px;
+    text-align: center;
+    margin-left:200px;
+}
+#logo{
+    height:350px;
+    width: 350px;
+}
+
+h1.name{
+    font-size:20px;
+}
+
+#topo{
+    background-color:black;
+    margin:0 auto px;
+    width:100%;
+    height:450px;
+    border-left: 0px;
+}
+
+.pokemon-info{
+    background-color: rgb(201, 201, 201);
+    border: solid 5px;
+    margin-top:20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 1050px;
+    font-size: 15px;
+}
+
+.pokemon-picture{
+    width:900px;
+    height:200px; 
+    margin: 0 auto;
+
+}
+#pokemon{
+    width:200px;
+    height:200px;
+    margin-left:0px;
+   
+}
+.search-input{
+    width:320px;
+    height: 30px;
+    border: solid 3px;;
+    border-radius: 20px;
+    margin-left:30px ;
+    margin-bottom: 50px;
+}
+
+.search-button{
+    width: 80px;
+    height: 30px;
+    border-radius: 20px;
+ 
+    
+}
