@@ -16,7 +16,7 @@ function obterPokeInfo(url, name) {
         .then(data => {
             pokemon = data;
         })
-        .catch(err => console.log(err));
+        .catch(err => alert('Não encontrado'));
        
         
 }
@@ -30,7 +30,6 @@ function criarCard() {
         <h1 class="name">Nome: ${pokemon.name}</h1>
         <h2 class="number">Nº ${pokemon.id}</h2>
         <h3 class="type">Tipo: ${pokemon.types.map(item => item.type.name).toString()}</h3>
-        <h3 class="skill">Habilidades: ${pokemon.moves.map(item => +'' + item.move.name).toString()}</h3>
         <h3 class="weight">Peso: ${pokemon.weight / 10}kg</h3>
         <h3 class="height">Altura: ${pokemon.height / 10}m</h3>
     </div>
