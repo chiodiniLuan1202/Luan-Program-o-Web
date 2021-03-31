@@ -2,9 +2,9 @@ const baseUrl = 'https://pokeapi.co/api/v2/pokemon/';
 
 
 const searchInput = document.querySelector('.search-input'),
-    searchButton = document.querySelector('.search-button'),
+    botaoBusca = document.querySelector('.search-button'),
     container = document.querySelector('.pokemon'),
-    erroMessage =  document.querySelector('.error');
+    erroMessage = document.querySelector('.error');
 
 var pokeName,
     pokemon,
@@ -16,9 +16,9 @@ function obterPokeInfo(url, name) {
         .then(data => {
             pokemon = data;
         })
-        .catch(err => alert('Não encontrado'));
-       
-        
+        .catch(err => alert(name +' não encontrado'));
+
+
 }
 
 function criarCard() {
@@ -30,6 +30,7 @@ function criarCard() {
         <h1 class="name">Nome: ${pokemon.name}</h1>
         <h2 class="number">Nº ${pokemon.id}</h2>
         <h3 class="type">Tipo: ${pokemon.types.map(item => item.type.name).toString()}</h3>
+        <h3 class="skill">Habilidades: ${pokemon.moves.map(item => ' ' + item.move.name).toString()}</h3>
         <h3 class="weight">Peso: ${pokemon.weight / 10}kg</h3>
         <h3 class="height">Altura: ${pokemon.height / 10}m</h3>
     </div>
@@ -38,10 +39,10 @@ function criarCard() {
     return carta;
 }
 
-function startApp(pokeName) {
+function iniciarApp(pokeName) {
     obterPokeInfo(baseUrl, pokeName);
 
-     
+
 
     setTimeout(function () {
 
@@ -52,16 +53,16 @@ function startApp(pokeName) {
             erroMessage.style.display = 'none';
             container.style.display = 'flex';
             container.innerHTML = criarCard();
-            
+
         }
     });
 }
 
-searchButton.addEventListener('click', event => {
+botaoBusca.addEventListener('click', event => {
     event.preventDefault();
     pokeName = searchInput.value.toLowerCase();
-    startApp(pokeName);
-    
+    iniciarApp(pokeName);
+
     setTimeout(() => {
         container.classList.remove('fade');
     }, 30000);
