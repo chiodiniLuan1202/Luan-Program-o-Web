@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.4.3.min.js"></script>
+    <title>Resistor</title>
+    <style>
+        #teste {
+            width: 28px;
+            height: 50px;
+            background: white;
+            border: 2px solid;
+            border-color: black;
+            margin-top:8px;
+            float:left ;
+            margin-left:10px;
+        }
+
+        #teste2 {
+            width: 28px;
+            height: 50px;
+            background: white;
+            border: 2px solid;
+            border-color: black;
+            float:left ;
+            margin-top:8px;
+        }
+
+        #teste3 {
+            width: 28px;
+            height: 50px;
+            background: white;
+            border: 2px solid;
+            border-color: black;
+            float:left ;
+            margin-top:8px;
+        }
+        #teste4 {
+            width: 28px;
+            height: 50px;
+            background: white;
+            border: 2px solid;
+            border-color: black;
+            float:left ;
+            margin-top:8px;
+        }
+        #teste5 {
+            width: 28px;
+            height: 50px;
+            background: white;
+            border: 2px solid;
+            border-color: black;
+            float:left ;
+        }
+        #calculadora{
+            margin:0px auto ;
+            width:750px;
+            text-align: center;
+            height: 300px;
+            border-color: black ;
+            border: 2px solid;
+        }
+        #resistor{
+            margin:0px auto ;
+            width:150px;
+            height:70px;
+            margin-left: 80px;
+            float:left;
+            border-color: black ;
+            border: 2px solid;
+            border-radius:30px;
+           
+        }
+        #faixas{
+            margin:0px auto ;
+            width:250px;
+            height:150px;
+            
+        }
+        
+
+    </style>
+</head>
+
+<body>
+  <div id="calculadora">
+    
+    <h1>Calculadora de Resistor</h1>
+    <div id="resistor">
+    <div id="teste">
+    </div>
+    <div id="teste2">
+    </div>
+    <div id="teste3">
+    </div>
+    <div id="teste4">
+    </div>
+</div>
+
+    
+   <div id="faixas">
+    <label for="faixa1">Primeira Faixa: </label> 
+    <select id="faixa1" form="carform" onchange="x()">
+        <option value="null">Selecione uma cor</option>
+        <option value="0">Preto(0)</option>
+        <option value="1">Marron(1)</option>
+        <option value="2">Vermelho(2)</option>
+        <option value="3">Laranja(3)</option>
+        <option value="4">Amarelo(4)</option>
+        <option value="5">Verde(5)</option>
+        <option value="6">Azul(6)</option>
+        <option value="7">Violeta(7)</option>
+        <option value="8">Cinza(8)</option>
+        <option value="9">Branc(9)o</option>
+        
+    </select>
+    <br>
+    <label for="faixa1">Segunda Faixa: </label> 
+    <select id="faixa2" form="carform" onchange="y()">
+        <option value="null">Selecione uma cor</option>
+        <option value="0">Preto(0)</option>
+        <option value="1">Marron(1)</option>
+        <option value="2">Vermelho(2)</option>
+        <option value="3">Laranja(3)</option>
+        <option value="4">Amarelo(4)</option>
+        <option value="5">Verde(5)</option>
+        <option value="6">Azul(6)</option>
+        <option value="7">Violeta(7)</option>
+        <option value="8">Cinza(8)</option>
+        <option value="9">Branc(9)o</option>
+        
+    </select>
+    <br>
+    <label for="faixa1">Multiplicação: </label> 
+    <select id="faixa3" form="corform" onchange="z()" >
+        <option value="">Selecione uma cor</option>
+        <option value="10">Prata (0.01 Ω)</option>
+        <option value="11">Ouro (0.1 Ω)</option>
+        <option value="0">Preto (1 Ω)</option>
+        <option value="1">Marrom (10 Ω)</option>
+        <option value="2">Vermelho (100 Ω)</option>
+        <option value="3">Laranja (1K Ω)</option>
+        <option value="4">Amarelo (10K Ω)</option>
+        <option value="5">Verde (100K Ω)</option>
+        <option value="6">Azul (1M Ω)</option>
+        <option value="7">Violeta (10M Ω)</option>
+    </select>
+    <br>
+    <label fid=or="faixa1">Tolerância: </label> 
+    <select id="faixa4" form="conform" onchange="w()">
+        <option value="">Selecione uma cor</option>
+            <option value="1">Prata (± 10%)</option>
+            <option value="2">Ouro (± 5%)</option>
+            <option value="3">Marrom (± 1%)</option>
+            <option value="4">Vermelho (± 2%)</option>
+            <option value="5">Verde (± 0.5%)</option>
+            <option value="6">Azul (± 0.25%)</option>
+            <option value="7">Violeta (± 0.1%)</option>
+        </select>
+    </div>
+    <button>Calcular</button>
+    </div>
+</div>
+   
+
+</body>
+<script>
+    function x() {
+        var x = document.querySelector('#faixa1').value;
+        if (x == 0) {
+            document.querySelector('#teste').style.background = 'black';
+        } else if (x == 1) {
+            document.querySelector('#teste').style.background = 'brown';
+        } else if (x == 2) {
+            document.querySelector('#teste').style.background = 'red';
+        } else if (x == 3) {
+            document.querySelector('#teste').style.background = 'orange';
+        }else if (x == 4) {
+            document.querySelector('#teste').style.background = 'yellow';
+        }else if (x == 5) {
+            document.querySelector('#teste').style.background = 'green';
+        }else if (x == 6) {
+            document.querySelector('#teste').style.background = 'blue';
+        }else if (x == 7) {
+            document.querySelector('#teste').style.background = 'purple';
+        }else if (x == 8) {
+            document.querySelector('#teste').style.background = 'gray';
+        }else if (x == 9) {
+            document.querySelector('#teste').style.background = 'white';
+        }
+    }
+ 
+    function y() {
+        var y = document.querySelector('#faixa2').value;
+        if (y == 0) {
+            document.querySelector('#teste2').style.background = 'black';
+        } else if (y == 1) {
+            document.querySelector('#teste2').style.background = 'brown';
+        } else if (y == 2) {
+            document.querySelector('#teste2').style.background = 'red';
+        } else if (y == 3) {
+            document.querySelector('#teste2').style.background = 'orange';
+        }else if (y == 4) {
+            document.querySelector('#teste2').style.background = 'yellow';
+        }else if (y == 5) {
+            document.querySelector('#teste2').style.background = 'green';
+        }else if (y == 6) {
+            document.querySelector('#teste2').style.background = 'blue';
+        }else if (y == 7) {
+            document.querySelector('#teste2').style.background = 'purple';
+        }else if (y == 8) {
+            document.querySelector('#teste2').style.background = 'gray';
+        }else if (y == 9) {
+            document.querySelector('#teste2').style.background = 'white';
+        }
+    }
+
+    function z() {
+        var z = document.querySelector('#faixa3').value;
+        if (z == 0) {
+            document.querySelector('#teste3').style.background = 'black';
+        } else if (z == 1) {
+            document.querySelector('#teste3').style.background = 'brown';
+        } else if (z == 2) {
+            document.querySelector('#teste3').style.background = 'red';
+        } else if (z == 3) {
+            document.querySelector('#teste3').style.background = 'orange';
+        }else if (z == 4) {
+            document.querySelector('#teste3').style.background = 'yellow';
+        }else if (z == 5) {
+            document.querySelector('#teste3').style.background = 'green';
+        }else if (z == 6) {
+            document.querySelector('#teste3').style.background = 'blue';
+        }else if (z == 7) {
+            document.querySelector('#teste3').style.background = 'purple';
+        }else if (z == 10) {
+            document.querySelector('#teste3').style.background = 'silver';
+        }else if (z == 11) {
+            document.querySelector('#teste3').style.background = 'gold';
+        }
+    }
+
+    function w() {
+        var w = document.querySelector('#faixa4').value;
+         if (w == 1) {
+            document.querySelector('#teste4').style.background = 'silver';
+        } else if (w == 2) {
+            document.querySelector('#teste4').style.background = 'gold';
+        } else if (w == 3) {
+            document.querySelector('#teste4').style.background = 'brown';
+        }else if (w == 4) {
+            document.querySelector('#teste4').style.background = 'red';
+        }else if (w == 5) {
+            document.querySelector('#teste4').style.background = 'green';
+        }else if (w == 6) {
+            document.querySelector('#teste4').style.background = 'blue';
+        }else if (w == 7) {
+            document.querySelector('#teste4').style.background = 'purple';
+        
+    }
+
+    }
+    
+</script>
+
+</html>
+</html>

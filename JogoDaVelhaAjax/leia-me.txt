@@ -1,0 +1,1 @@
+Todos os arquivos deve ser colocados na pasta htdocs do Xampp e acessar pelo localhost

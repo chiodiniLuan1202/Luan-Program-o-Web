@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 3</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <figure>
+
+        <img data-imagem="troca_imagem" src="https://i.pinimg.com/736x/e1/d1/b6/e1d1b672213e90e1aa5b4cd6a26c2bb0.jpg">
+      
+        <figcaption>
+      
+        <button id="botao_troca_imagem" role="button">Trocar Imagem</button>
+      
+        </figcaption>
+      </figure>
+      <script>
+    $('#botao_troca_imagem').click(function() {
+    $('img[data-imagem="troca_imagem"]').attr("src", "http://cbissn.ibict.br/images/phocagallery/galeria2/thumbs/phoca_thumb_l_image03_grd.png");
+   
+});
+
+      </script>
+</body>
+</html>

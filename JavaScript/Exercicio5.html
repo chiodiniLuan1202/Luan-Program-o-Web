@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      #quadrado{
+      width:30px;
+      height:30px;
+      border:25px solid;
+      border-color: black;
+      }
+      </style>
+
+  </head>
+  <body>
+    <div id="quadrado">
+      </div>
+      <button  onclick="trocarCor()" type="button" name="button">Mudar cor</button>
+  </body>
+  <script>
+    function trocarCor(){
+        document.querySelector('div#quadrado').style.background="yellow";
+    }
+  </script>
+</html>

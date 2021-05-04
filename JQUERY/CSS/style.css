@@ -1,0 +1,14 @@
+
+.destaque{
+    color: rgb(255, 0, 234);
+}
+.hidden {
+    display: none;
+}
+.label, .input{
+    display: block;
+    width: 200px;
+}
+.input{
+    margin: 5px 0 15px;
+}

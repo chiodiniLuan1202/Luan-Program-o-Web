@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.4.3.min.js"></script>
+
+    <title>Exercicio 4</title>
+    <style type="text/css">
+        #box { 
+            background: #fa0404ea; 
+            width:300px; 
+            height:200px; 
+        }
+     </style>
+   
+
+    <body>
+        <div id="box"></div>
+        <button id='botao'>Preto</button>
+        <button id='botaoA'>Azul</button>
+        <button id='botaoV'>Vermelho</button>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("#botao").click(function(){
+                    $("#box").css("background","black");
+                    
+                });
+
+                $("#botaoA").click(function(){
+                    $("#box").css("background","blue");
+                    
+                });
+                $("#botaoV").click(function(){
+                    $("#box").css("background","red");
+                    
+                });
+                
+            });
+            </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<title>Exercicio 2</title>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    var x = parseInt($('#test').val());
+    var y = parseInt($("#test2").val());
+    alert("Soma: " +(x+y));
+  });
+}); 
+</script>
+</head>
+<body>
+
+<p>Valor 1: <input type="text" id="test" value=""></p>
+<p>Valor 2: <input type="text" id="test2" value=""></p>
+
+<button>Soma</button>
+
+</body>
+</html>

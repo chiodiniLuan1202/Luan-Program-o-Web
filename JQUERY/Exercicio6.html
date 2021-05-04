@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.4.3.min.js"></script>
+    <title>Exercicio 6</title>
+<style>
+    #sua-div{
+            background: #fa0404ea; 
+            width:300px; 
+            height:30px; 
+    }
+</style>
+
+</head>
+<body>
+   <button id="aumentar">Botao Aumentar</button>
+   <button id="diminuir">Botao Diminuir</button>
+   <button id="cor">verde</button>
+   
+   <div id="sua-div">
+   </div>
+   
+   <script>
+       $('#aumentar').click(function(){
+         $('#sua-div').animate({"height" : "200px"}, 200);
+    });
+
+    $('#diminuir').click(function(){
+        $('#sua-div').animate({"height" : "30px"}, 200);
+    });
+
+    $('#cor').click(function(){
+        $('#sua-div').css("background","green");
+    });
+
+   </script>
+</body>
+</html>
