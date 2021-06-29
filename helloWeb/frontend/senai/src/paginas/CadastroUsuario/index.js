@@ -1,102 +1,57 @@
 import React, {useState} from 'react';
 import api from '../services/api';
-import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
-import './style.css';
+import Button from '@material-ui/core/Button';
 
 function CadastroUsuario() {
 
-    const [idusuario, setID] = useState('');
     const [nome, setNome] = useState('');
-    const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
-    const [telefone, setTelefone] = useState('');
-    
+    const [email, setEmail] = useState('');
+    const [endereco, setEndereco] = useState('');
+   
     async function handleCadastro(e) {
         e.preventDefault();
 
         const dados = {
-            idusuario,
             nome,
-            email,
             senha,
-            telefone,
-            
+            email,
+            endereco
         };
 
         try {
             console.log(dados);
-            const response = await api.put('usuario', dados);
+            const response = await api.put('book', dados);
             const id = response.data.id;
             console.log(response.data);
-            alert("o id do usuario é " + id);
+            alert("o id do livro é " + id);
             // history.push('/');
         } catch (error) {
-            alert("Erro ao cadastrar usuario " + error.message);            
+            alert("Erro ao cadastrar livro " + error.message);            
         }
     }
 
     return (
-      
-       <div id="inputs">
+        <div>
             <div>
-                <h1>Cadastro de Usuario</h1>
+                <h1>Cadastro Usuário</h1>
 
-                <form onSubmit={handleCadastro}>
+                <form onSubmit={handleCadastro} >
                     
-                <TextField
-                           
-                            id="ID"
-                             label="ID"
-                             value={idusuario}
-                            onChange={e => setID(e.target.value)}
-                            variant="outlined"/>
-                      
-                <TextField
-                           
-                            id="nome"
-                             label="NOME"
-                             value={nome}
-                            onChange={e => setNome(e.target.value)}
-                            variant="outlined"/>
-                          
-                <TextField
-                            
-                            id="email"
-                             label="EMAIL"
-                             value={email}
-                            onChange={e => setEmail(e.target.value)}
-                            variant="outlined"/>                    
+                    <TextField id="nome" value= {nome} label="Nome" onChange = {e => setNome(e.target.value)} />
+                    <TextField id="senha" value= {senha} label="Senha" onChange = {e => setSenha(e.target.value)} />
+                    <TextField id="email" value= {email} label="Email" onChange = {e => setEmail(e.target.value)} />
+                    <TextField id="endereco" value= {endereco} label="Endereço" onChange = {e => setEndereco(e.target.value)} />
                     
-
-                <TextField
-                           
-                            id="senha"
-                            label="SENHA"
-                            type="password"
-                            value={senha}
-                            onChange={e => setSenha(e.target.value)}
-                            variant="outlined"/>       
-                       
-                <TextField
-                        
-                            id="telefone"
-                            label="TELEFONE"
-                            value={telefone}
-                            onChange={e => setTelefone(e.target.value)}
-                        
-                            variant="outlined"/> 
-                        
-                  <div id ="botao">
-                  <Button variant="contained" color="primary" type="submit" >Cadastro</Button>
-                  </div>
+                    <Button variant="contained" color="primary" type = "submit">Cadastrar</Button>
+                    
                 </form>
     
 
             </div>
         </div>
-      
-       
+
     );
 }
 

@@ -1,11 +1,12 @@
 import React, {useState} from 'react';
 import api from '../services/api';
-import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+import Box from '@material-ui/core/Box';
 
 function CadastroLivro() {
 
-    const [idlivro, setID] = useState('');
+    const [idlivro, setIdLivro] = useState('');
     const [nome, setNome] = useState('');
     const [editora, setEditora] = useState('');
     const [isbn, setIsbn] = useState('');
@@ -39,60 +40,41 @@ function CadastroLivro() {
     }
 
     return (
-       
-       
-       <div>
-         
-            <div id = 'inputs'>
-                <h1>Cadastro de Livro</h1>
-
-                <form onSubmit={handleCadastro}>
-                    
-                <TextField
-                        placeholder="ID"
-                        value={idlivro}
-                        onChange={e => setID(e.target.value)}
-                        variant="outlined"/> 
-                     <TextField
-                        placeholder="Descricao do livro"
-                        value={nome}
-                        onChange={e => setNome(e.target.value)}
-                        variant="outlined"/> 
-
-                <TextField
-                        placeholder="Editora do livro"
-                        value={editora}
-                        onChange={e => setEditora(e.target.value)}
-                        variant="outlined"/> 
-
-                <TextField
-                        placeholder="Isbn"
-                        value={isbn}
-                        onChange={e => setIsbn(e.target.value)}
-                        variant="outlined"/> 
-
-                <TextField 
-                        placeholder="quantidade"
-                        value={quantidade}
-                        onChange={e => setQuantidade(e.target.value)}
-                        variant="outlined"/> 
-
-                <TextField 
-                        placeholder="assunto"
-                        value={assunto}
-                        onChange={e => setAssunto(e.target.value)}
-                        variant="outlined"/> 
-
-                <TextField      
-                        placeholder="autor"
-                        value={autor}
-                        onChange={e => setAutor(e.target.value)}
-                        variant="outlined"/> 
-                     <Button variant="contained" color="primary" type="submit" >Cadastro</Button>   
-                </form>
-            </div>
+        <div>
+            <Box width="100%" textAlign="center">          
+                <div>       
+                    <h1>Cadastro de Livro</h1>
+                        <Box width="100%" margin-left= "center">    
+                            <form onSubmit={handleCadastro}>
+                                
+                                <Box display="flex" p={1} bgcolor="background.paper" >
+                                    {<TextField id="idlivro" value= {idlivro} label="Id do livro" onChange = {e => setIdLivro(e.target.value)} />}
+                                </Box>
+                                <Box display="flex" p={1} bgcolor="background.paper">
+                                    {<TextField id="nome" value= {nome} label="Nome do livro" onChange = {e => setNome(e.target.value)} /> }  
+                                </Box>
+                                <Box display="flex" p={1} bgcolor="background.paper">
+                                    {<TextField id="editora" value= {editora} label="Editora do livro" onChange = {e => setEditora(e.target.value)} /> }  
+                                </Box>
+                                <Box display="flex" p={1} bgcolor="background.paper">
+                                    {<TextField id="isbn" value= {isbn} label="Isbn" onChange = {e => setIsbn(e.target.value)} /> }  
+                                </Box>
+                                <Box display="flex" p={1} bgcolor="background.paper">
+                                    {<TextField id="quantidade" value= {quantidade} label="Quantidade" onChange = {e => setQuantidade(e.target.value)} /> }  
+                                </Box>
+                                <Box display="flex" p={1} bgcolor="background.paper">
+                                    {<TextField id="assunto" value= {assunto} label="Assunto" onChange = {e => setAssunto(e.target.value)} />}  
+                                </Box>
+                                <Box display="flex" p={1} bgcolor="background.paper">
+                                    {<TextField id="autor" value= {autor} label="Autor" onChange = {e => setAutor(e.target.value)} />}  
+                                </Box>
+                                <Button variant="contained" color="primary" type = "submit">Cadastrar</Button>
+                                
+                            </form>
+                        </Box> 
+                </div>
+            </Box>  
         </div>
-
     );
 }
 
